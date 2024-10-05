@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class JuegoAdivinanza {
     public static void main(String[] args) {
-        Random random = new Random();
-        int numeroSecreto = random.nextInt(100) + 1;
+        final Random random = new Random();
+        final int numeroSecreto = random.nextInt(99) + 1;
 
-        Scanner scanner = new Scanner(System.in);
-        int intentos = 0;
+        try (Scanner scanner = new Scanner(System.in)) {
+            int intentos = 0;
 
 
         System.out.println("Adivina el número entre 1 y " + 100 + "Tienes 10 intentos");
@@ -34,4 +34,5 @@ public class JuegoAdivinanza {
 
         scanner.close();
     }
+}
 }
